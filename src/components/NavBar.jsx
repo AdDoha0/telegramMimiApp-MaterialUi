@@ -1,89 +1,79 @@
 import React, { useState } from 'react';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
-// import EditIcon from '@mui/icons-material/Edit';
-// import PersonIcon from '@mui/icons-material/Person';
-
-
-
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import StarIcon from '@mui/icons-material/Star';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-
-
 export default function CustomBottomNavigation() {
-
     const [value, setValue] = useState(0);
 
-    const handleChange = (event, newValue) =>  {
+    const handleChange = (event, newValue) => {
         setValue(newValue);
-        console.log('Выбрана вкладка:', newValue)
+        console.log('Выбрана вкладка:', newValue);
     };
 
     return (
         <Paper
             sx={{
                 position: "fixed",
-                bottom: 0,
-                left: 0,
-                right: 0,
+                bottom: 16, // Добавим отступ снизу для лучшего вида
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "calc(100% - 32px)", // Оставляем отступы по бокам
+                maxWidth: 400, // Максимальная ширина для больших экранов
                 zIndex: 1000,
-                borderTop: "1px solid #e0e0e0", 
-                height: {xs: 60, sm: 70}
+                borderRadius: "24px", // Закругление углов
+                overflow: "hidden", // Скрываем углы BottomNavigation
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.15)", // Красивая тень
+                height: 60,
+                border: "none" // Убираем стандартную границу
             }}
-            elevation={8}
         >
-
             <BottomNavigation
                 value={value}
                 onChange={handleChange}
                 showLabels
                 sx={{
                     height: '100%',
+                    backgroundColor: "transparent",
                     '& .MuiBottomNavigationAction-root': {
-                    minWidth: 60,      // Минимальная ширина вкладки
-                    fontSize: '0.75rem' // Размер текста подписей
+                        minWidth: 60,
+                        fontSize: '0.75rem',
+                        padding: '6px 0',
                     },
-                    // Стили для активной вкладки
                     '& .Mui-selected': {
-                        color: '#D4834A !important'  // Оранжевый цвет (как в дизайне)
+                        color: '#D4834A !important',
+                    },
+                    '& .MuiBottomNavigationAction-label': {
+                        marginTop: '4px',
                     }
                 }}
             >
                 <BottomNavigationAction 
-                    icon={<HomeFilledIcon/>}
+                    icon={<HomeFilledIcon />}
                     sx={{
-                        // Адаптивные размеры иконки
                         '& .MuiSvgIcon-root': {
-                        fontSize: { xs: '2rem', sm: '2.3rem' }
+                            fontSize: '1.8rem'
                         }
                     }}
                 />
-
-                {/* Вторая вкладка - Практика */}
                 <BottomNavigationAction 
-
-                icon={<MenuBookIcon />}       // Иконка карандаша
-                sx={{
-                    '& .MuiSvgIcon-root': {
-                    fontSize: { xs: '2rem', sm: '2.3rem' }
-                    }
-                }}
+                    icon={<MenuBookIcon />}
+                    sx={{
+                        '& .MuiSvgIcon-root': {
+                            fontSize: '1.8rem'
+                        }
+                    }}
                 />
-
-
-                 {/* Третья вкладка - Профиль */}
                 <BottomNavigationAction 
-
-                icon={<StarIcon />}     // Иконка человека
-                sx={{
-                    '& .MuiSvgIcon-root': {
-                    fontSize: { xs: '2rem', sm: '2.3rem' }
-                    }
-                }}
+                    icon={<StarIcon />}
+                    sx={{
+                        '& .MuiSvgIcon-root': {
+                            fontSize: '1.8rem'
+                        }
+                    }}
                 />
             </BottomNavigation>
         </Paper>
     );
 }
- 
