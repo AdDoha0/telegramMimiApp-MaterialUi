@@ -1,9 +1,9 @@
 import React from "react"
-import LearnPage from "./pages/LearnPage"
+import HomePage from "./pages/HomePage"
 
 export default function App() {
   return (
-    <LearnPage />
+    <HomePage />
   )
 }
 

@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import EditIcon from '@mui/icons-material/Edit';
-import PersonIcon from '@mui/icons-material/Person';
+// import EditIcon from '@mui/icons-material/Edit';
+// import PersonIcon from '@mui/icons-material/Person';
 
-function CustomBottomNavigation() {
+
+
+import HomeFilledIcon from '@mui/icons-material/HomeFilled';
+import StarIcon from '@mui/icons-material/Star';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+
+
+
+export default function CustomBottomNavigation() {
 
     const [value, setValue] = useState(0);
 
@@ -44,23 +51,22 @@ function CustomBottomNavigation() {
                 }}
             >
                 <BottomNavigationAction 
-                    label="Lessons"
-                    icon={<MenuBookIcon/>}
+                    icon={<HomeFilledIcon/>}
                     sx={{
                         // Адаптивные размеры иконки
                         '& .MuiSvgIcon-root': {
-                        fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                        fontSize: { xs: '2rem', sm: '2.3rem' }
                         }
                     }}
                 />
 
                 {/* Вторая вкладка - Практика */}
                 <BottomNavigationAction 
-                label="Practice" 
-                icon={<EditIcon />}       // Иконка карандаша
+
+                icon={<MenuBookIcon />}       // Иконка карандаша
                 sx={{
                     '& .MuiSvgIcon-root': {
-                    fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                    fontSize: { xs: '2rem', sm: '2.3rem' }
                     }
                 }}
                 />
@@ -68,11 +74,11 @@ function CustomBottomNavigation() {
 
                  {/* Третья вкладка - Профиль */}
                 <BottomNavigationAction 
-                label="Profile" 
-                icon={<PersonIcon />}     // Иконка человека
+
+                icon={<StarIcon />}     // Иконка человека
                 sx={{
                     '& .MuiSvgIcon-root': {
-                    fontSize: { xs: '1.2rem', sm: '1.5rem' }
+                    fontSize: { xs: '2rem', sm: '2.3rem' }
                     }
                 }}
                 />
@@ -80,7 +86,4 @@ function CustomBottomNavigation() {
         </Paper>
     );
 }
-
-
-
-export default CustomBottomNavigation; 
+ 

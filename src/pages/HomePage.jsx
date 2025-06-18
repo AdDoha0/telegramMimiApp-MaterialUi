@@ -11,7 +11,7 @@ import CustomBottomNavigation from '../components/NavBar';
 
 
 
-export default function LearnPage() {
+export default function HomePage() {
   return (
    <> 
     <Container 
@@ -74,9 +74,15 @@ export default function LearnPage() {
           Lessons
         </Typography>
         
-        {/* Временные заглушки для карточек уроков */}
-        <LessonCard>Alphabet - Beginner • 10 lessons</LessonCard>
-        <LessonCard>Basic Phrases - Beginner • 12 lessons</LessonCard>
+        <LessonCard 
+            title="Alphabet" 
+            subtitle="Beginner • 10 lessons" 
+        />
+
+        <LessonCard 
+            title="Basic Phrases" 
+            subtitle="Beginner • 12 lessons" 
+        />
 
       </Box>
 
@@ -93,7 +99,10 @@ export default function LearnPage() {
         >
           Textbook
         </Typography>
-        <LessonCard>Arabic for Beginners</LessonCard>
+        <LessonCard 
+            title="Grammar Basics"
+            subtitle="Beginner • 14 lessons"
+        />
       </Box>
     </Container>
     <CustomBottomNavigation />
