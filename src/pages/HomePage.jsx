@@ -1,49 +1,24 @@
 
-
-// src/pages/LearnPage.jsx
-
 import React from 'react';
+
 import { Container, Typography, Box } from '@mui/material';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import StarIcon from '@mui/icons-material/Star';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 import ProgressBar from '../components/ProgressCard/ProgressCard';
 import LessonCard from '../components/LessonCard/LessonCard'; 
-import CustomBottomNavigation from '../components/NavBar';
+import Header from "../components/Header/Header"
+import AchievementCard from "../components/LessonCard/AchievementCard"
+import MainLayout from '../MainLayout ';
+
 
 
 
 export default function HomePage() {
   return (
-   <> 
-    <Container 
-      maxWidth="sm"  // sm = 600px максимум (идеально для мобильных)
-      sx={{ 
-        padding: { xs: 1, sm: 2 },  // xs (мобильные) = 8px, sm+ = 16px
-        minHeight: '100vh',         // минимальная высота = высота экрана
-        backgroundColor: '#f8f9fa',  // светло-серый фон
-        paddingBottom: { xs: 8, sm: 10 }  // ← Добавь эту строку                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          // светло-серый фон
-
-      }}
-    >
-      
-      {/* Заголовок страницы */}
-      <Box sx={{ 
-        textAlign: 'center',           // текст по центру
-        marginBottom: { xs: 3, sm: 4 }, // отступ снизу (мобильные меньше)
-        paddingTop: 2                  // отступ сверху
-      }}>
-        <Typography 
-          variant="h3"           // размер заголовка (большой)
-          component="h1"         // HTML тег h1 для SEO
-          sx={{ 
-            fontWeight: 'bold',          // жирный шрифт
-            color: '#333',               // темно-серый цвет
-            fontSize: { xs: '1.8rem', sm: '2.5rem' }  // адаптивный размер
-          }}
-        >
-          Learn Arabic
-        </Typography>
-      </Box>
-
+    <>
+      <Header />
       {/* Секция Progress */}
       <Box sx={{ marginBottom: { xs: 3, sm: 4 } }}>
         <Typography 
@@ -57,7 +32,32 @@ export default function HomePage() {
         >
         Progress
         </Typography>
+
         <ProgressBar/>
+    </Box>
+
+    <Box sx={{ 
+      marginBottom: 2, 
+      display: 'flex', 
+      gap: 2, 
+      overflowX: 'auto',
+      paddingBottom: 1,
+    }}>
+      <AchievementCard 
+        title="Starter" 
+        icon={<EmojiEventsIcon sx={{ fontSize: 50 }}  />} 
+        color="#FFD700" // золотой
+      />
+      <AchievementCard 
+        title="Pro Learner" 
+        icon={<StarIcon sx={{ fontSize: 50 }} />} 
+        color="#D4834A"
+      />
+      <AchievementCard 
+        title="Completed 10" 
+        icon={<CheckCircleIcon sx={{ fontSize: 50 }} />} 
+        color="#4caf50" // зелёный
+      />
     </Box>
 
       {/* Секция Lessons */}
@@ -104,9 +104,7 @@ export default function HomePage() {
             subtitle="Beginner • 14 lessons"
         />
       </Box>
-    </Container>
-    <CustomBottomNavigation />
-  </>
 
+    </>
   );
 }

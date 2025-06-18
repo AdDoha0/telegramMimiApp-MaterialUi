@@ -1,55 +1,53 @@
 import React from 'react';
-import { Box, LinearProgress, Typography, Paper } from '@mui/material';
+import { Box, Button, LinearProgress } from '@mui/material';
 
 export default function ProgressBar() {
-  // Пример: прогресс на 65%
-  const progress = 65; 
+
+  const value = 65
 
   return (
-    <Paper
-      // elevation={10}
-      sx={{
-        padding: 2,
-        borderRadius: 2,
+    <Box 
+      sx={{ 
         backgroundColor: '#fff',
+        borderRadius: 3,  
+        padding: 2,
+        mb: 1,
         boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+        textAlign: 'center',
       }}
     >
-      <Typography 
-        variant="body1" 
-        sx={{ 
-          fontWeight: 500, 
-          marginBottom: 1,
-          fontSize: { xs: '1.2rem', sm: '1.3rem' }
-        }}
-      >
-        Progress
-      </Typography>
-
-      <Box sx={{ width: '100%' }}>
+      {/* Прогресс-бар */}
+      <Box sx={{ mb: 2 }}>
         <LinearProgress 
-          variant="determinate" 
-          value={progress} 
-          sx={{
-            height: 10,
-            borderRadius: 5,
-            backgroundColor: '#e0e0e0',
-            '& .MuiLinearProgress-bar': {
-              backgroundColor: '#D4834A' // Тот же оранжевый цвет
-            }
-          }}
-        />
-        <Typography 
-          variant="body2" 
+            variant="determinate"           
+            value={value} 
+            sx={{ 
+              height: 10, 
+              borderRadius: 5,
+              backgroundColor: ' #f9eee3', // цвет фона прогресс-бара (например, светло-оранжевый)
+
+              '& .MuiLinearProgress-bar': {
+                backgroundColor: '#e18c4b', // цвет заливки 
+                borderRadius: 5,
+              }
+            }}
+          />
+      </Box>
+      
+     {/* Кнопка снизу слева */}
+      <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+        <Button 
+          variant="contained" 
           sx={{ 
-            textAlign: 'right', 
-            marginTop: 1,
-            fontSize: { xs: '0.85rem', sm: '0.95rem' }
+            backgroundColor: '#e99555',
+            textTransform: 'none',
+            fontWeight: 'bold',
+            fontSize: { xs: '0.9rem', sm: '1rem' }
           }}
         >
-          {progress}%
-        </Typography>
+          Continue
+        </Button>
       </Box>
-    </Paper>
+    </Box>
   );
 }
