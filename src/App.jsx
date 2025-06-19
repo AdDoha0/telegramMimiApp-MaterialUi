@@ -17,8 +17,8 @@ export default function App() {
       <Routes>
         <Route element={<MainLayout />}>   
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/textbooks" element={<LessonListPage/>}/>
-          {/* <Route path="/textbook/:id" element={<LessonPage/>}/> */}
+          <Route path="/lessons" element={<LessonListPage/>}/>
+          {/* <Route path="/lessons/:id" element={<LessonPage/>}/> */}
         </Route>
       </Routes>
   </BrowserRouter>

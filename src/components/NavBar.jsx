@@ -1,32 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import StarIcon from '@mui/icons-material/Star';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function CustomBottomNavigation() {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [value, setValue] = useState(0);
 
+    const routes = ['/', '/lessons', '/favorites'];
+
+    useEffect(() => {
+        const index = routes.findIndex(route => route === location.pathname);
+        setValue(index !== -1 ? index : 0);
+    }, [location.pathname]);
+
+
     const handleChange = (event, newValue) => {
-        setValue(newValue);
-        console.log('Выбрана вкладка:', newValue);
+        navigate(routes[newValue]);
     };
 
     return (
         <Paper
             sx={{
                 position: "fixed",
-                bottom: 16, // Добавим отступ снизу для лучшего вида
+                bottom: 16,
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "calc(100% - 32px)", // Оставляем отступы по бокам
-                maxWidth: 400, // Максимальная ширина для больших экранов
+                width: "calc(100% - 32px)",
+                maxWidth: 400,
                 zIndex: 1000,
-                borderRadius: "24px", // Закругление углов
-                overflow: "hidden", // Скрываем углы BottomNavigation
-                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.15)", // Красивая тень
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.15)",
                 height: 60,
-                border: "none" // Убираем стандартную границу
+                border: "none"
             }}
         >
             <BottomNavigation
@@ -51,27 +61,18 @@ export default function CustomBottomNavigation() {
             >
                 <BottomNavigationAction 
                     icon={<HomeFilledIcon />}
-                    sx={{
-                        '& .MuiSvgIcon-root': {
-                            fontSize: '1.8rem'
-                        }
-                    }}
+                    label="Главная"
+                    sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
                 <BottomNavigationAction 
                     icon={<MenuBookIcon />}
-                    sx={{
-                        '& .MuiSvgIcon-root': {
-                            fontSize: '1.8rem'
-                        }
-                    }}
+                    label="Уроки"
+                    sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
                 <BottomNavigationAction 
                     icon={<StarIcon />}
-                    sx={{
-                        '& .MuiSvgIcon-root': {
-                            fontSize: '1.8rem'
-                        }
-                    }}
+                    label="Избранное"
+                    sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
             </BottomNavigation>
         </Paper>
