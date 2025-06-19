@@ -2,10 +2,10 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 
-
+import { useTheme } from '@mui/material/styles';
 
 export default function Header() {
-
+    const theme = useTheme();
     return (
     <header>
       {/* Заголовок страницы */}
@@ -32,7 +32,7 @@ export default function Header() {
         sx={{
             textAlign: 'center',
             alignItems: 'center',
-            backgroundColor: '#ffe0b2',
+            backgroundColor: theme.palette.custom.avatarBg,
             borderRadius: 3,
             padding: { xs: 1.5, sm: 2 },           // уменьшили внутренние отступы
             boxShadow: '0 2px 6px rgba(0,0,0,0.05)',

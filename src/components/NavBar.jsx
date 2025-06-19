@@ -4,8 +4,11 @@ import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import StarIcon from '@mui/icons-material/Star';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
+
 
 export default function CustomBottomNavigation() {
+    const theme = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const [value, setValue] = useState(0);
@@ -52,7 +55,7 @@ export default function CustomBottomNavigation() {
                         padding: '6px 0',
                     },
                     '& .Mui-selected': {
-                        color: '#D4834A !important',
+                        color: theme.palette.secondary.main + '!important',
                     },
                     '& .MuiBottomNavigationAction-label': {
                         marginTop: '4px',
