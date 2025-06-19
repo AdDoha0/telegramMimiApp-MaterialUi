@@ -18,12 +18,15 @@ export default function LessonCard({ title,  subtitle, icon }) {
                 padding: 2,
                 boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
                 mb: 2, // отступ снизу между карточками
+                border: "solid",
+                borderColor: theme.palette.custom.border,
+                borderWidth: "1px"
             }}
         >
           <Avatar
             sx={{
                 backgroundColor: theme.palette.custom.avatarBg,
-                color: theme.palette.secondary.main,
+                color: theme.palette.primary.main,
                 mr: 2,
                 width: 48,
                 height: 48,
@@ -34,14 +37,14 @@ export default function LessonCard({ title,  subtitle, icon }) {
           <Box sx={{ flexGrow: 1 }}>
             <Typography 
                 variant="subtitle1" 
-                sx={{ fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.1rem' } }}
+                sx={{ color: theme.palette.text.primary,  fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.1rem' } }}
                 >
                 {title}
             </Typography>
             <Typography
                 variant='body2'
                 color="text.secondary"
-                sx={{ fontSize: { xs: '0.85rem', sm: '0.9rem' } }}
+                sx={{ color: theme.palette.text.secondary, fontSize: { xs: '0.85rem', sm: '0.9rem' } }}
                 >
                 { subtitle }
             </Typography>

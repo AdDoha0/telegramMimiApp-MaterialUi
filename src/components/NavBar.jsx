@@ -39,7 +39,7 @@ export default function CustomBottomNavigation() {
                 overflow: "hidden",
                 boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.15)",
                 height: 60,
-                border: "none"
+                border: "none",
             }}
         >
             <BottomNavigation
@@ -55,7 +55,7 @@ export default function CustomBottomNavigation() {
                         padding: '6px 0',
                     },
                     '& .Mui-selected': {
-                        color: theme.palette.secondary.main + '!important',
+                        color: theme.palette.primary.main + '!important',
                     },
                     '& .MuiBottomNavigationAction-label': {
                         marginTop: '4px',
@@ -64,17 +64,17 @@ export default function CustomBottomNavigation() {
             >
                 <BottomNavigationAction 
                     icon={<HomeFilledIcon />}
-                    label="Главная"
+                    // label="Главная"
                     sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
                 <BottomNavigationAction 
                     icon={<MenuBookIcon />}
-                    label="Уроки"
+                    // label="Уроки"
                     sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
                 <BottomNavigationAction 
                     icon={<StarIcon />}
-                    label="Избранное"
+                    // label="Избранное"
                     sx={{ '& .MuiSvgIcon-root': { fontSize: '1.8rem' } }}
                 />
             </BottomNavigation>

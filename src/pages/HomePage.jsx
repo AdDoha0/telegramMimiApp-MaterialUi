@@ -43,7 +43,7 @@ export default function HomePage() {
       overflowX: 'auto',
       paddingBottom: 1,
     }}>
-      <AchievementCard 
+      {/* <AchievementCard 
         title="Starter" 
         icon={<EmojiEventsIcon sx={{ fontSize: 50 }}  />} 
         color="#FFD700" // золотой
@@ -57,7 +57,7 @@ export default function HomePage() {
         title="Completed 10" 
         icon={<CheckCircleIcon sx={{ fontSize: 50 }} />} 
         color="#4caf50" // зелёный
-      />
+      /> */}
     </Box>
 
       {/* Секция Lessons */}

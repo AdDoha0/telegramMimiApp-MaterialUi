@@ -1,19 +1,25 @@
 import React from 'react';
 import { Box, Button, LinearProgress } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export default function ProgressBar() {
+  const theme = useTheme();
+  
 
   const value = 65
 
   return (
     <Box 
       sx={{ 
-        backgroundColor: '#fff',
+        backgroundColor: theme.palette.background.paper,
         borderRadius: 3,  
         padding: 2,
         mb: 1,
         boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
         textAlign: 'center',
+        border: "solid",
+        borderColor: theme.palette.custom.border,
+        borderWidth: "1px"
       }}
     >
       {/* Прогресс-бар */}
@@ -24,10 +30,10 @@ export default function ProgressBar() {
             sx={{ 
               height: 10, 
               borderRadius: 5,
-              backgroundColor: ' #f9eee3', // цвет фона прогресс-бара (например, светло-оранжевый)
+              // backgroundColor: ' #f9eee3', // цвет фона прогресс-бара (например, светло-оранжевый)
 
               '& .MuiLinearProgress-bar': {
-                backgroundColor: '#e18c4b', // цвет заливки 
+                backgroundColor: theme.palette.primary.main, // цвет заливки 
                 borderRadius: 5,
               }
             }}
@@ -39,7 +45,7 @@ export default function ProgressBar() {
         <Button 
           variant="contained" 
           sx={{ 
-            backgroundColor: '#e99555',
+            backgroundColor: theme.palette.primary.main,
             textTransform: 'none',
             fontWeight: 'bold',
             fontSize: { xs: '0.9rem', sm: '1rem' }

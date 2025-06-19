@@ -19,7 +19,7 @@ export default function Header() {
           component="h1"         // HTML тег h1 для SEO
           sx={{ 
             fontWeight: 'bold',          // жирный шрифт
-            color: '#333',               // темно-серый цвет
+            color: theme.palette.text.primary,               // темно-серый цвет
             fontSize: { xs: '1.8rem', sm: '2.5rem' }  // адаптивный размер
           }}
         >
@@ -32,7 +32,7 @@ export default function Header() {
         sx={{
             textAlign: 'center',
             alignItems: 'center',
-            backgroundColor: theme.palette.custom.avatarBg,
+            backgroundColor: theme.palette.background.paper,
             borderRadius: 3,
             padding: { xs: 1.5, sm: 2 },           // уменьшили внутренние отступы
             boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
@@ -45,7 +45,7 @@ export default function Header() {
             variant="h1"
             sx={{ 
             fontWeight: 'bold',
-            color: '#333',
+            color: theme.palette.text.secondary,
             fontSize: { xs: '1.3rem', sm: '1.8rem' } // уменьшили размер текста
             }}
         >
