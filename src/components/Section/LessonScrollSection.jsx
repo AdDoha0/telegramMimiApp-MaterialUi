@@ -1,8 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
 import CourseCard from "../LessonCard/CurseCarcd";
-
-
-
+import LessonCard from '../LessonCard/LessonCard';
+import Grid from '@mui/material/Grid';
 
 export default function CurseCardSection() {
     const lessons = [
@@ -35,7 +34,7 @@ export default function CurseCardSection() {
         {lessons.map((lesson, index) => (
           <Box key={index} sx={{ 
             scrollSnapAlign: "start",
-            flex: "0 0 auto",     // 💡 не позволяем сжиматься
+            flex: "0 0 auto",     
             minWidth: { xs: 220, sm: 250, md: 300 },
             maxWidth: { xs: 260, sm: 320, md: 360 },
           }}>
@@ -50,5 +49,43 @@ export default function CurseCardSection() {
       </Box>
     </Box>
   );
+}
 
+
+
+export function LessonCardListSection() {
+
+  const lessons = [
+    {
+      title: 'Алфавит',
+      subtitle: 'Базовый уровень • 10 уроков',
+    },
+    {
+      title: 'Приветствия и знакомства',
+      subtitle: 'Базовый уровень • 8 уроков',
+    },
+    {
+      title: 'Местоимения',
+      subtitle: 'Начальный уровень • 12 уроков',
+    },
+    {
+      title: 'Глаголы ',
+      subtitle: 'Средний уровень • 15 уроков',
+    }
+  ];
+
+  return (
+    <Container sx={{ mb: 4 }}>
+      <Grid container spacing={{ xs: 2, sm: 3 }}>
+        {lessons.map((lesson, idx) => (
+          <Grid item xs={12} sm={6} key={idx}>
+            <LessonCard
+              title={lesson.title}
+              subtitle={lesson.subtitle}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
 }
