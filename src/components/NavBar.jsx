@@ -40,6 +40,7 @@ export default function CustomBottomNavigation() {
                 boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.15)",
                 height: 60,
                 border: "none",
+                backgroundColor: "#c8ced9"
             }}
         >
             <BottomNavigation
@@ -55,7 +56,7 @@ export default function CustomBottomNavigation() {
                         padding: '6px 0',
                     },
                     '& .Mui-selected': {
-                        color: theme.palette.primary.main + '!important',
+                        color: " #09213b" + '!important',
                     },
                     '& .MuiBottomNavigationAction-label': {
                         marginTop: '4px',

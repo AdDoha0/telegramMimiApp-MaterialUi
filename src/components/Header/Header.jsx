@@ -4,15 +4,15 @@ import { Typography, Box } from '@mui/material';
 
 import { useTheme } from '@mui/material/styles';
 
-export default function Header() {
+export default function Header({ children }) {
     const theme = useTheme();
     return (
     <header>
       {/* Заголовок страницы */}
       <Box sx={{ 
-        textAlign: 'center',           // текст по центру
-        marginBottom: { xs: 3, sm: 4 }, // отступ снизу (мобильные меньше)
-        paddingTop: 6                 // отступ сверху
+        // textAlign: 'center',           // текст по центру
+        marginBottom: { xs: 1.7, sm: 2 }, // отступ снизу (мобильные меньше)
+        paddingTop: 0                // отступ сверху
       }}>
         <Typography 
           variant="h3"           // размер заголовка (большой)
@@ -20,15 +20,16 @@ export default function Header() {
           sx={{ 
             fontWeight: 'bold',          // жирный шрифт
             color: theme.palette.text.primary,               // темно-серый цвет
-            fontSize: { xs: '1.8rem', sm: '2.5rem' }  // адаптивный размер
+            fontSize: { xs: '2.2rem', sm: '2.5rem' }  // адаптивный размер
           }}
         >
-          السلام عليكم
+
+          { children }
         </Typography>
       </Box>
 
 
-      <Box 
+      {/* <Box 
         sx={{
             textAlign: 'center',
             alignItems: 'center',
@@ -50,11 +51,8 @@ export default function Header() {
             }}
         >
             Ready to learn Arabic?
-        </Typography>
-    </Box>
-
-
- 
+        </Typography> */}
+    {/* </Box> */}
     </header>
     )
     

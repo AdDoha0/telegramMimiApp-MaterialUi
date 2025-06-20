@@ -45,7 +45,7 @@ export default function ProgressBar() {
         <Button 
           variant="contained" 
           sx={{ 
-            backgroundColor: theme.palette.primary.main,
+            // backgroundColor: theme.palette.,
             textTransform: 'none',
             fontWeight: 'bold',
             fontSize: { xs: '0.9rem', sm: '1rem' }

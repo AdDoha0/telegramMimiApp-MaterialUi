@@ -10,15 +10,21 @@ import ProgressBar from '../components/ProgressCard/ProgressCard';
 import LessonCard from '../components/LessonCard/LessonCard'; 
 import Header from "../components/Header/Header"
 import AchievementCard from "../components/LessonCard/AchievementCard"
-import MainLayout from '../MainLayout ';
-
-
+import SearchBar from "../components/Search"
 
 
 export default function HomePage() {
+  const handleSearch = (query) => {
+    console.log("Поиск по:", query);
+  };
+
   return (
     <>
-      <Header />
+      
+      <Header>HUNA ARABIC</Header>
+
+      <SearchBar onSearch={handleSearch} />
+
       {/* Секция Progress */}
       <Box sx={{ marginBottom: { xs: 3, sm: 4 } }}>
         <Typography 
