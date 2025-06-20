@@ -84,7 +84,7 @@ export function LessonCardListSection() {
     <Container sx={{ mb: 4 }} disableGutters maxWidth={false}>
       <Grid container spacing={{ xs: 2, sm: 3 }}>
         {lessons.map((lesson, idx) => (
-          <Grid item xs={12} sm={6} key={idx}>
+          <Grid item size={{xs:12, sm:6 }} key={idx}>
             <LessonCard
               title={lesson.title}
               subtitle={lesson.subtitle}

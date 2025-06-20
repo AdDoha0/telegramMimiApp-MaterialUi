@@ -7,6 +7,7 @@ import SearchBar from "../components/Search"
 import CurseCardSection from '../components/Section/LessonScrollSection';
 import { LessonCardListSection } from "../components/Section/LessonScrollSection"
 
+
 export default function HomePage() {
   const handleSearch = (query) => {
     console.log("Поиск по:", query);
