@@ -13,6 +13,10 @@ import AchievementCard from "../components/LessonCard/AchievementCard"
 import SearchBar from "../components/Search"
 
 
+
+import CurseCardSection from '../components/Section/LessonScrollSection';
+
+
 export default function HomePage() {
   const handleSearch = (query) => {
     console.log("Поиск по:", query);
@@ -25,47 +29,22 @@ export default function HomePage() {
 
       <SearchBar onSearch={handleSearch} />
 
-      {/* Секция Progress */}
-      <Box sx={{ marginBottom: { xs: 3, sm: 4 } }}>
-        <Typography 
-            variant="h5" 
-            component="h2" 
-            sx={{ 
-                fontWeight: 'bold', 
-                marginBottom: 2,
-                fontSize: { xs: '1.2rem', sm: '1.5rem' }  // адаптивный размер
-            }}
+    <Box>
+        <Typography
+          variant="h5" 
+          component="h2" 
+          sx={{ 
+            fontWeight: 'bold', 
+            marginBottom: 2,
+            fontSize: { xs: '1.2rem', sm: '1.5rem' }
+          }}
         >
-        Progress
+          Интересное
         </Typography>
 
-        <ProgressBar/>
+    <CurseCardSection />
+        
     </Box>
-
-    <Box sx={{ 
-      marginBottom: 2, 
-      display: 'flex', 
-      gap: 2, 
-      overflowX: 'auto',
-      paddingBottom: 1,
-    }}>
-      {/* <AchievementCard 
-        title="Starter" 
-        icon={<EmojiEventsIcon sx={{ fontSize: 50 }}  />} 
-        color="#FFD700" // золотой
-      />
-      <AchievementCard 
-        title="Pro Learner" 
-        icon={<StarIcon sx={{ fontSize: 50 }} />} 
-        color="#D4834A"
-      />
-      <AchievementCard 
-        title="Completed 10" 
-        icon={<CheckCircleIcon sx={{ fontSize: 50 }} />} 
-        color="#4caf50" // зелёный
-      /> */}
-    </Box>
-
       {/* Секция Lessons */}
       <Box sx={{ marginBottom: { xs: 3, sm: 4 } }}>
         <Typography 
@@ -77,7 +56,7 @@ export default function HomePage() {
             fontSize: { xs: '1.2rem', sm: '1.5rem' }
           }}
         >
-          Lessons
+          Уроки
         </Typography>
         
         <LessonCard 
@@ -89,7 +68,6 @@ export default function HomePage() {
             title="Basic Phrases" 
             subtitle="Beginner • 12 lessons" 
         />
-
       </Box>
 
       {/* Секция Textbook */}
@@ -103,12 +81,8 @@ export default function HomePage() {
             fontSize: { xs: '1.2rem', sm: '1.5rem' }
           }}
         >
-          Textbook
+          Links
         </Typography>
-        <LessonCard 
-            title="Grammar Basics"
-            subtitle="Beginner • 14 lessons"
-        />
       </Box>
 
     </>
