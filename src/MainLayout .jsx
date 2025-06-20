@@ -20,8 +20,8 @@ export default function MainLayout() {
         }}
       >
         <Container 
-          maxWidth="sm" 
-          sx={{ padding: { xs: 1, sm: 2 } }}
+          maxWidth="md" 
+          sx={{ padding: { xs: 1, sm: 2, md: 3 } }}
         >
           <Outlet/>
         </Container>

@@ -13,13 +13,15 @@ export default function ProgressBar() {
       sx={{ 
         backgroundColor: theme.palette.background.paper,
         borderRadius: 3,  
-        padding: 2,
+        padding: { xs: 1, sm: 2 },
         mb: 1,
         boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
         textAlign: 'center',
         border: "solid",
         borderColor: theme.palette.custom.border,
-        borderWidth: "1px"
+        borderWidth: "1px",
+        width: '100%',
+        maxWidth: { xs: '100%', sm: 400 },
       }}
     >
       {/* Прогресс-бар */}
@@ -28,7 +30,7 @@ export default function ProgressBar() {
             variant="determinate"           
             value={value} 
             sx={{ 
-              height: 10, 
+              height: { xs: 8, sm: 10 }, 
               borderRadius: 5,
               // backgroundColor: ' #f9eee3', // цвет фона прогресс-бара (например, светло-оранжевый)
 
@@ -48,7 +50,9 @@ export default function ProgressBar() {
             // backgroundColor: theme.palette.,
             textTransform: 'none',
             fontWeight: 'bold',
-            fontSize: { xs: '0.9rem', sm: '1rem' }
+            fontSize: { xs: '0.85rem', sm: '1rem' },
+            px: { xs: 1.5, sm: 2.5 },
+            py: { xs: 0.5, sm: 1 },
           }}
         >
           Continue

@@ -1,4 +1,3 @@
-
 import { Box, Typography } from "@mui/material";
 import CourseCard from "../LessonCard/CurseCarcd";
 
@@ -30,18 +29,16 @@ export default function CurseCardSection() {
           paddingBottom: 1,
           scrollSnapType: "x mandatory", // плавный скролл
           "&::-webkit-scrollbar": { display: "none" }, // скрыть скроллбар
-           whiteSpace: "nowrap", // 💡 Важен для горизонтального потока
+          scrollPadding: { xs: 1, sm: 2 },
         }}
       >
         {lessons.map((lesson, index) => (
           <Box key={index} sx={{ 
             scrollSnapAlign: "start",
             flex: "0 0 auto",     // 💡 не позволяем сжиматься
-            minWidth: 250,        // 💡 задай нужную ширину для карточки
-            scrollSnapAlign: "start",
-
-            
-        }}>
+            minWidth: { xs: 220, sm: 250, md: 300 },
+            maxWidth: { xs: 260, sm: 320, md: 360 },
+          }}>
             <CourseCard
               title={lesson.title}
               lessonsCount={lesson.lessonsCount}

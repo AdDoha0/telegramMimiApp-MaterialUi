@@ -1,4 +1,3 @@
-
 import { Typography, Box, Avatar, IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import MenuBookIcon from '@mui/icons-material/MenuBook'; // можно заменить иконку по ситуации
@@ -15,12 +14,15 @@ export default function LessonCard({ title,  subtitle, icon }) {
                 alignItems: 'center',
                 backgroundColor: theme.palette.background.paper,
                 borderRadius: 3,
-                padding: 2,
+                padding: { xs: 1, sm: 2 },
                 boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
                 mb: 2, // отступ снизу между карточками
                 border: "solid",
                 borderColor: theme.palette.custom.border,
-                borderWidth: "1px"
+                borderWidth: "1px",
+                minWidth: { xs: 200, sm: 250 },
+                maxWidth: { xs: '100%', sm: 400 },
+                width: '100%',
             }}
         >
           <Avatar
@@ -28,8 +30,8 @@ export default function LessonCard({ title,  subtitle, icon }) {
                 backgroundColor: theme.palette.custom.avatarBg,
                 color: theme.palette.primary.main,
                 mr: 2,
-                width: 48,
-                height: 48,
+                width: { xs: 40, sm: 48 },
+                height: { xs: 40, sm: 48 },
             }}
           >
             {icon || <MenuBookIcon />}
@@ -49,8 +51,8 @@ export default function LessonCard({ title,  subtitle, icon }) {
                 { subtitle }
             </Typography>
           </Box>
-            <IconButton IconButton edge="end">
-                <ChevronRightIcon />
+            <IconButton edge="end" sx={{ ml: { xs: 0.5, sm: 1 } }}>
+                <ChevronRightIcon sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem' } }} />
             </IconButton>
         </Box>
         
