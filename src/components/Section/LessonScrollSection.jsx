@@ -17,6 +17,12 @@ export default function CurseCardSection() {
         level: "A1",
         image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Аль-Аджуррумия"
         },
+        {
+          title: "Сарф Основы",
+          lessonsCount: 18,
+          level: "A1",
+          image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Аль-Аджуррумия"
+        },
     ]
     return (
     <Box sx={{ mb: 4 }}>
@@ -75,7 +81,7 @@ export function LessonCardListSection() {
   ];
 
   return (
-    <Container sx={{ mb: 4 }}>
+    <Container sx={{ mb: 4 }} disableGutters maxWidth={false}>
       <Grid container spacing={{ xs: 2, sm: 3 }}>
         {lessons.map((lesson, idx) => (
           <Grid item xs={12} sm={6} key={idx}>

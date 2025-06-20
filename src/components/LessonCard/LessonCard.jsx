@@ -18,9 +18,9 @@ export default function LessonCard({ title, subtitle, icon }) {
           border: "solid",
           borderColor: theme.palette.custom.border,
           borderWidth: "1px",
-          width: '100%',
           height: 88, // фиксированная высота для одинаковых карточек
           overflow: 'hidden',
+          width: '100%'
         }}
       >
         <Avatar
