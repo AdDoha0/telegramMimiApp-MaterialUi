@@ -1,16 +1,14 @@
 import React from "react"
 
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { createTheme } from '@mui/material';
 
 
-import MainLayout from "./MainLayout ";
-import HomePage from "./pages/HomePage";
-import LessonListPage from "./pages/LessonListPage/"
-// import LessonPage from "./pages/LessonPage"
-import theme from "./theme"
+import MainLayout from "@/app/MainLayout.jsx";
+import HomePage from "@/pages/HomePage";
+import LessonListPage from "@/pages/LessonListPage"
+import LessonPage from "@/pages/LessonPage"
+import theme from "@/shared/theme/theme"
 
 
 export default function App() {
@@ -22,7 +20,7 @@ export default function App() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/lessons" element={<LessonListPage />} />
-            {/* <Route path="/lessons/:id" element={<LessonPage />} /> */}
+            <Route path="/lesson/" element={<LessonPage />} /> 
           </Route>
         </Routes>
       </BrowserRouter>

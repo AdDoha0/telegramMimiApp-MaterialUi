@@ -1,5 +1,4 @@
-
-import ExpandableBar from "../ExpandableBar"
+import ExpandableBar from "@/features/lessons/ExpandableBar"
 import { Container, Box, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
