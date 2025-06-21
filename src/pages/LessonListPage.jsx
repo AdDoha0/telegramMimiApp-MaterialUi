@@ -4,7 +4,7 @@ import { Container, Typography, Box } from '@mui/material';
 
 import Header from "../components/Header/Header"
 import SearchBar from "../components/Search"
-import ExpandableSection from "../components/ExpandableBar"
+import ExpandableSection from "../components/Section/ExpandleSection"
 
 import { useTheme } from '@mui/material/styles';
 

@@ -1,5 +1,6 @@
 
-
+import ExpandableBar from "../ExpandableBar"
+import { Container, Box, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
 export default function ExpandableSection() {
@@ -29,7 +30,8 @@ export default function ExpandableSection() {
             title="Средний уровень"
             items={["Мудари", "Масдар", "Виды множественного", "Мафуль", "Идхафа"]}
           />
-      </Box>           
+      </Box>
+      
     </>
     );
 }
