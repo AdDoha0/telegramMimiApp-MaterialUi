@@ -5,16 +5,16 @@ import CourseCard from "@/features/lessons/CurseCard";
 export default function CurseCardSection() {
     const lessons = [
         {
-        title: "Аль-Аджуррумия",
+        title: "Мединский курс",
         lessonsCount: 21,
         level: "A2",
-        image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Аль-Аджуррумия"
+        image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Мединский курс"
         },
         {
         title: "Сарф Основы",
         lessonsCount: 18,
         level: "A1",
-        image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Аль-Аджуррумия"
+        image: "https://dummyimage.com/600x300/8B0000/ffffff&text=Сарф Основы"
         },
         {
           title: "Сарф Основы",

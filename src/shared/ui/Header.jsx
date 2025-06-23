@@ -54,8 +54,5 @@ export default function Header({ children }) {
         </Typography> */}
     {/* </Box> */}
     </header>
-    )
-    
-
-    
+    )    
 }

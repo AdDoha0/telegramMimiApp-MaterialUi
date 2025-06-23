@@ -20,7 +20,7 @@ export default function CourseCard({
         overflow: 'hidden',
         maxWidth: { xs: 260, sm: 320, md: 360 },
         minWidth: { xs: 220, sm: 250, md: 300 },
-        bgcolor: theme.palette.background.paper,
+        bgcolor: theme.palette.background.paper,           
         border: "solid",
         borderColor: theme.palette.custom.border,
         borderWidth: "1px",

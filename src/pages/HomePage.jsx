@@ -32,7 +32,7 @@ export default function HomePage() {
         >
           Интересное
         </Typography>
-
+        {/* variant="subtitle1" */}
     <CurseCardSection />
         
     </Box>
