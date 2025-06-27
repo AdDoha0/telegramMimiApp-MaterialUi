@@ -4,3 +4,27 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+# --- Web фреймворк ---
+axum = "0.8.4"                     
+tokio = { version = "1.45.0", features = ["full"] } 
+
+# --- Работа с базой данных (PostgreSQL) ---
+sqlx = { version = "0.8.6", features = [
+    "runtime-tokio-rustls",
+    "postgres",
+    "macros",
+    "uuid",
+    "chrono",
+    "migrate"
+] }                              # Самая новая версия 0.8.6
+
+# --- Прочее ---
+serde = { version = "1.0.214", features = ["derive"] }  
+serde_json = "1.0.132"                              
+uuid = { version = "1.17.0", features = ["serde", "v4"] } 
+chrono = { version = "0.4.38", features = ["serde"] }   
+dotenv = "0.15"
+thiserror = "1.0.66"                                   
+anyhow = "1.0.92"                                      
+tracing = "0.1.40"                                    
+tracing-subscriber = "0.3.18"

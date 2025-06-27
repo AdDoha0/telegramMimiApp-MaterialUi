@@ -12,6 +12,11 @@
 /frontend/pnpm-debug.log*
 /frontend/lerna-debug.log*
 
+
+
+# === BACKEND (AXUM) ===
+/backend/.env
+
 # === EDITOR SETTINGS ===
 .vscode/
 !.vscode/extensions.json
