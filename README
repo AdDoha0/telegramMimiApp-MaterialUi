@@ -1,0 +1,52 @@
+
+
+┌────────────┐
+│  users     │
+│────────────│
+│ id (PK)    │
+│ telegram_id│
+│ username   │
+│ joined_at  │
+└─────┬──────┘
+      │
+      │ 1
+      │
+      ▼
+┌────────────────────────────────────────────────────────┐
+│                  user_progress                         │
+│────────────────────────────────────────────────────────│
+│ user_id (FK → users.id)                                │
+│ lesson_id (FK → lessons.id)                            │
+│ started_at                                             │
+│ last_visited_at                                        │
+│ completed_at                                           │
+│ visits                                                 │
+│ progress_percent (0–100)                               │
+│ status ('incomplete', 'understood', 'confused')        │
+│ PRIMARY KEY (user_id, lesson_id)                       │
+└──────────────┬──────────────────────────────┬──────────┘
+               │                              │
+               │                              │
+               ▼                              ▼
+        ┌──────────────┐              ┌──────────────┐
+        │   lessons    │              │  textbooks   │
+        │──────────────│              │──────────────│
+        │ id (PK)      │◄─────────────┤ id (PK)      │
+        │ textbook_id (FK)            │ title        │
+        │ title        │              │ description  │
+        │ "order"      │              │ level        │
+        │ is_free      │              │ is_active    │
+        │ description  │              └──────────────┘
+        └─────┬────────┘
+              │
+     ┌────────┴──────────────┐
+     │                       │
+     ▼                       ▼
+┌──────────────┐       ┌──────────────┐
+│ lesson_notes │       │ lesson_videos│
+│──────────────│       │──────────────│
+│ id (PK)      │       │ id (PK)      │
+│ lesson_id FK │       │ lesson_id FK │
+│ content      │       │ title        │
+│ created_at   │       │ youtube_url  │
+└──────────────┘       └──────────────┘

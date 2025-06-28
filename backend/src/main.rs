@@ -17,6 +17,10 @@ async fn root() -> &'static str {
 
 #[tokio::main]
 async fn main() {
+
+    println!("http://localhost:2000/");
+
+
     dotenv::dotenv().ok(); 
     let database_url = env::var("DATABASE_URL").expect("Connect database url!");
 
@@ -30,4 +34,5 @@ async fn main() {
 
     let listener = TcpListener::bind("0.0.0.0:2000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
+
 }
