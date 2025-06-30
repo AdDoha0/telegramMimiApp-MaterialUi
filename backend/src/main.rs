@@ -11,8 +11,8 @@ mod modules;
 mod error;
 
 #[derive(Clone)]
-struct AppState {
-    dp_pool: PgPool
+pub struct AppState {
+    pub dp_pool: PgPool
 }
 
 
