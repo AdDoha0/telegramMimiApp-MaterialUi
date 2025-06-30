@@ -1,5 +1,6 @@
 pub mod handlers;
 pub mod entity;
 pub mod service;
-pub mod validator;
+pub mod repository;
 pub mod dto;
+pub mod routes;

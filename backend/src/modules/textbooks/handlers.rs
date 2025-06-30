@@ -34,8 +34,7 @@ pub async fn get_textbook_handler(
     Ok(Json(result))
 }
 
-
-pub async fn list_textbook_handler(
+pub async fn list_textbooks_handler(
     State(state): State<AppState>,
 ) -> Result<impl IntoResponse, AppError> {
     let result: Vec<super::dto::output::TextbookResponseDto> = list_textbooks(&state.dp_pool).await?;

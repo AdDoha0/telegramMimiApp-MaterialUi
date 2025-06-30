@@ -1,31 +1,18 @@
 use std::env;
-
-use axum::{routing::get, Router};
 use sqlx::PgPool;
 use tokio::net::TcpListener;
-
-
-
+use app::app_router;
+use db::AppState;
 
 mod modules;
 mod error;
-
-#[derive(Clone)]
-pub struct AppState {
-    pub dp_pool: PgPool
-}
-
-
-async fn root() -> &'static str {
-    "Items Api)"
-}
-
+mod app;
+mod db;
 
 #[tokio::main]
 async fn main() {
 
     println!("http://localhost:2000/");
-
 
     dotenv::dotenv().ok(); 
     let database_url = env::var("DATABASE_URL").expect("Connect database url!");
@@ -34,9 +21,7 @@ async fn main() {
         .await
         .expect("Failed to connect to Postgres");
 
-    let app  = Router::new()
-        .route("/", get(root))
-        .with_state(AppState { dp_pool: db_pool });
+    let app = app_router(AppState { dp_pool: db_pool});
 
     let listener = TcpListener::bind("0.0.0.0:2000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
