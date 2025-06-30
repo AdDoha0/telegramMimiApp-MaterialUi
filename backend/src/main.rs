@@ -8,6 +8,7 @@ use tokio::net::TcpListener;
 
 
 mod modules;
+mod error;
 
 #[derive(Clone)]
 struct AppState {
