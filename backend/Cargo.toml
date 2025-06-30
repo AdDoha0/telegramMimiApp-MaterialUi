@@ -24,7 +24,6 @@ serde_json = "1.0.132"
 uuid = { version = "1.17.0", features = ["serde", "v4"] } 
 chrono = { version = "0.4.38", features = ["serde"] }   
 dotenv = "0.15"
-thiserror = "1.0.66"                                   
-anyhow = "1.0.92"                                      
+thiserror = "1.0.66"                                                                       
 tracing = "0.1.40"                                    
 tracing-subscriber = "0.3.18"
